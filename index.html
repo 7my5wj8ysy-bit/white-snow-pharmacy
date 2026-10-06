@@ -1,432 +1,1526 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>صيدلية الثلج الأبيض | White Snow Pharmacy</title>
+<title>صيدلية الثلج الأبيض | White Snow Pharmacy</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: "Cairo", sans-serif;
-      background: #ffffff;
-      color: #12324a;
-    }
-
-    .top-header {
-      width: 100%;
-      background: #ffffff;
-      border-bottom: 1px solid #e7f0f5;
-      padding: 14px 30px;
-    }
-
-    .header-container {
-      max-width: 1450px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      gap: 25px;
-    }
-
-    /* Logo */
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      min-width: 250px;
-      text-decoration: none;
-      color: #0877b9;
-    }
-
-    .snowflake {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: #eaf7fc;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 30px;
-    }
-
-    .logo-text {
-      line-height: 1.2;
-    }
-
-    .logo-ar {
-      font-size: 21px;
-      font-weight: 800;
-    }
-
-    .logo-en {
-      font-family: "Poppins", sans-serif;
-      font-size: 13px;
-      font-weight: 500;
-      color: #5d9bc0;
-      direction: ltr;
-      text-align: right;
-    }
-
-    /* Search */
-
-    .search-box {
-      flex: 1;
-      height: 48px;
-      border: 1.5px solid #d9e8ef;
-      border-radius: 28px;
-      display: flex;
-      align-items: center;
-      padding: 0 18px;
-      background: #ffffff;
-      transition: 0.25s ease;
-    }
-
-    .search-box:focus-within {
-      border-color: #0877b9;
-      box-shadow: 0 0 0 4px rgba(8, 119, 185, 0.08);
-    }
-
-    .search-icon {
-      font-size: 21px;
-      color: #52768c;
-      margin-left: 10px;
-    }
-
-    .search-box input {
-      width: 100%;
-      border: none;
-      outline: none;
-      font-family: "Cairo", sans-serif;
-      font-size: 14px;
-      color: #12324a;
-      background: transparent;
-    }
-
-    .search-box input::placeholder {
-      color: #8ba0ad;
-    }
-
-    /* Header Actions */
-
-    .header-actions {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      white-space: nowrap;
-    }
-
-    .language {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    .language a {
-      color: #0877b9;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    .language span {
-      color: #ccd9df;
-    }
-
-    .action {
-      position: relative;
-      border: none;
-      background: transparent;
-      cursor: pointer;
-      color: #0877b9;
-      font-family: "Cairo", sans-serif;
-      font-size: 14px;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .action-icon {
-      font-size: 23px;
-    }
-
-    .cart-badge {
-      position: absolute;
-      top: -9px;
-      left: -7px;
-      min-width: 18px;
-      height: 18px;
-      padding: 0 4px;
-      border-radius: 50%;
-      background: #0877b9;
-      color: white;
-      font-family: "Poppins", sans-serif;
-      font-size: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* Tablet */
-
-    @media (max-width: 1050px) {
-      .top-header {
-        padding: 12px 18px;
-      }
-
-      .header-container {
-        gap: 15px;
-      }
-
-      .logo {
-        min-width: auto;
-      }
-
-      .logo-ar {
-        font-size: 17px;
-      }
-
-      .logo-en {
-        font-size: 11px;
-      }
-
-      .header-actions {
-        gap: 10px;
-      }
-
-      .action span:not(.action-icon):not(.cart-badge) {
-        display: none;
-      }
-    }
-
-    /* Mobile */
-
-    @media (max-width: 700px) {
-      .top-header {
-        padding: 10px 14px;
-      }
-
-      .header-container {
-        display: grid;
-        grid-template-columns: auto 1fr auto;
-        gap: 10px;
-      }
-
-      .logo {
-        order: 2;
-      }
-
-      .logo-text {
-        display: none;
-      }
-
-      .snowflake {
-        width: 42px;
-        height: 42px;
-        font-size: 25px;
-      }
-
-      .search-box {
-        order: 1;
-        height: 42px;
-      }
-
-      .header-actions {
-        order: 3;
-      }
-
-      .language,
-      .action:first-of-type {
-        display: none;
-      }
-    }
-.main-nav {
-  width: 100%;
-  background: #ffffff;
-  border-bottom: 1px solid #e7f0f5;
-  box-shadow: 0 3px 12px rgba(20, 80, 110, 0.04);
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
-.nav-container {
-  max-width: 1450px;
-  margin: 0 auto;
-  min-height: 52px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  padding: 0 20px;
+:root{
+  --blue:#0877b9;
+  --dark:#07558b;
+  --light:#eaf7ff;
+  --verylight:#f5fbff;
+  --pink:#f47f98;
+  --text:#173b55;
+  --muted:#71879a;
+  --border:#e4eef4;
+  --white:#fff;
+  --shadow:0 8px 28px rgba(19,91,130,.09);
 }
 
-.nav-link {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 52px;
-  padding: 0 17px;
-  color: #31586e;
-  text-decoration: none;
-  font-family: "Cairo", sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  white-space: nowrap;
-  transition: 0.25s ease;
+body{
+  font-family:"Cairo",sans-serif;
+  background:#fff;
+  color:var(--text);
 }
 
-.nav-link::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 50%;
-  width: 0;
-  height: 3px;
-  border-radius: 5px 5px 0 0;
-  background: #0877b9;
-  transform: translateX(50%);
-  transition: width 0.25s ease;
+button,a{
+  font-family:inherit;
 }
 
-.nav-link:hover {
-  color: #0877b9;
-  background: #f5fbfe;
+a{
+  text-decoration:none;
+  color:inherit;
 }
 
-.nav-link:hover::after,
-.nav-link.active::after {
-  width: 65%;
+.container{
+  width:min(1450px,92%);
+  margin:auto;
 }
 
-.nav-link.active {
-  color: #0877b9;
-  font-weight: 700;
+/* TOP HEADER */
+.topbar{
+  background:#fff;
+  border-bottom:1px solid var(--border);
 }
 
-.nav-link.offers {
-  color: #e38a9c;
-  font-weight: 700;
+.top-container{
+  min-height:78px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
 }
 
-@media (max-width: 1100px) {
-  .nav-container {
-    overflow-x: auto;
-    justify-content: flex-start;
-    scrollbar-width: none;
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width:245px;
+}
+
+.snowflake{
+  width:54px;
+  height:54px;
+  border-radius:50%;
+  background:#eef9ff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:34px;
+  color:#54a8d8;
+}
+
+.logo-ar{
+  font-size:23px;
+  font-weight:800;
+  color:var(--blue);
+  line-height:1.1;
+}
+
+.logo-en{
+  font-family:Poppins,sans-serif;
+  color:#7191a5;
+  font-size:13px;
+  margin-top:3px;
+}
+
+.search{
+  flex:1;
+  max-width:600px;
+  height:48px;
+  border:1px solid #d8e6ee;
+  border-radius:28px;
+  display:flex;
+  align-items:center;
+  padding:0 18px;
+  background:#fff;
+}
+
+.search span{
+  font-size:23px;
+  color:#54758a;
+}
+
+.search input{
+  border:0;
+  outline:0;
+  flex:1;
+  font-size:14px;
+  padding:0 12px;
+  font-family:"Cairo";
+  color:var(--text);
+  background:transparent;
+}
+
+.actions{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  color:#17587d;
+}
+
+.action{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  cursor:pointer;
+  border:0;
+  background:none;
+  font-size:14px;
+}
+
+.action-icon{
+  font-size:23px;
+}
+
+.cart{
+  position:relative;
+}
+
+.badge{
+  position:absolute;
+  top:-10px;
+  right:-8px;
+  background:var(--blue);
+  color:white;
+  width:19px;
+  height:19px;
+  border-radius:50%;
+  font:11px Poppins;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* NAV */
+.nav{
+  border-bottom:1px solid var(--border);
+  background:white;
+}
+
+.nav-container{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  min-height:53px;
+}
+
+.nav a{
+  padding:14px 18px;
+  font-size:14px;
+  font-weight:600;
+  white-space:nowrap;
+  position:relative;
+}
+
+.nav a:hover,
+.nav a.active{
+  color:var(--blue);
+  background:#f0f9ff;
+  border-radius:9px;
+}
+
+.nav a.active:after{
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:25%;
+  width:50%;
+  height:3px;
+  background:var(--blue);
+  border-radius:4px 4px 0 0;
+}
+
+.nav .offer{
+  color:#e9859b;
+}
+
+/* HERO */
+.hero{
+  background:linear-gradient(110deg,#f1fbff,#dff3ff);
+  min-height:380px;
+  overflow:hidden;
+}
+
+.hero-inner{
+  min-height:380px;
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  align-items:center;
+  gap:20px;
+}
+
+.hero-text{
+  padding:35px 10px;
+}
+
+.hero-small{
+  color:var(--blue);
+  font-weight:700;
+  font-size:15px;
+  margin-bottom:8px;
+}
+
+.hero h1{
+  font-size:43px;
+  line-height:1.35;
+  color:#08639b;
+  margin-bottom:12px;
+  font-weight:800;
+}
+
+.hero p{
+  font-size:18px;
+  line-height:2;
+  color:#31566d;
+  max-width:600px;
+  margin-bottom:25px;
+}
+
+.hero-buttons{
+  display:flex;
+  gap:13px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  border:0;
+  border-radius:28px;
+  padding:13px 27px;
+  cursor:pointer;
+  font-weight:700;
+  font-size:14px;
+}
+
+.btn-primary{
+  background:var(--blue);
+  color:white;
+  box-shadow:0 8px 18px rgba(8,119,185,.2);
+}
+
+.btn-outline{
+  background:white;
+  color:var(--blue);
+  border:1.5px solid var(--blue);
+}
+
+.hero-visual{
+  height:100%;
+  min-height:350px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  position:relative;
+}
+
+.products-visual{
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  gap:13px;
+  width:100%;
+}
+
+.product-shape{
+  background:white;
+  border-radius:16px 16px 8px 8px;
+  box-shadow:var(--shadow);
+  width:115px;
+  height:190px;
+  padding:13px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:space-between;
+  border:1px solid #edf5f9;
+}
+
+.product-shape.tall{
+  height:240px;
+}
+
+.product-shape .cap{
+  width:55%;
+  height:18px;
+  background:#8fd3ee;
+  border-radius:6px 6px 0 0;
+}
+
+.product-shape .label{
+  border:1px solid #dcecf3;
+  width:100%;
+  padding:12px 3px;
+  text-align:center;
+  border-radius:7px;
+  font-size:11px;
+  color:#126c9f;
+}
+
+.product-shape .label b{
+  display:block;
+  font-size:13px;
+  margin-bottom:4px;
+}
+
+/* FEATURES */
+.features{
+  background:white;
+  padding:22px 0;
+  border-bottom:1px solid #edf3f7;
+}
+
+.feature-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+}
+
+.feature{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  color:#215876;
+  font-size:13px;
+  font-weight:600;
+}
+
+.feature-icon{
+  font-size:26px;
+}
+
+/* CATEGORIES */
+section{
+  padding:35px 0;
+}
+
+.section-title{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:22px;
+}
+
+.section-title h2{
+  font-size:23px;
+  color:#126596;
+}
+
+.section-title a{
+  color:#1576a9;
+  font-size:13px;
+  font-weight:700;
+}
+
+.categories{
+  display:grid;
+  grid-template-columns:repeat(10,1fr);
+  gap:12px;
+}
+
+.category{
+  background:#f5faff;
+  border:1px solid #eaf1f5;
+  border-radius:15px;
+  min-height:110px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.category:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow);
+  background:#fff;
+}
+
+.category-icon{
+  font-size:31px;
+}
+
+.category span{
+  font-size:12px;
+  font-weight:700;
+  text-align:center;
+}
+
+/* BANNERS */
+.banner-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.banner{
+  min-height:210px;
+  border-radius:18px;
+  padding:28px;
+  position:relative;
+  overflow:hidden;
+}
+
+.banner-pink{
+  background:linear-gradient(110deg,#fff0f4,#ffe3ea);
+}
+
+.banner-blue{
+  background:linear-gradient(110deg,#e9f8ff,#d9f1ff);
+}
+
+.banner h3{
+  font-size:25px;
+  color:#e65f7d;
+  margin-bottom:4px;
+}
+
+.banner-blue h3{
+  color:#09679e;
+}
+
+.banner p{
+  color:#426276;
+  margin-bottom:17px;
+}
+
+.banner .mini-products{
+  position:absolute;
+  left:30px;
+  bottom:10px;
+  display:flex;
+  align-items:flex-end;
+  gap:5px;
+}
+
+.mini{
+  width:50px;
+  height:95px;
+  border-radius:8px 8px 4px 4px;
+  background:white;
+  border:1px solid #e4edf2;
+  box-shadow:0 4px 12px rgba(0,0,0,.06);
+}
+
+/* PRODUCTS */
+.products{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:14px;
+}
+
+.card{
+  border:1px solid #e5edf2;
+  border-radius:15px;
+  overflow:hidden;
+  background:white;
+  transition:.2s;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow);
+}
+
+.card-img{
+  height:185px;
+  background:#f8fbfd;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.fake-bottle{
+  width:72px;
+  height:115px;
+  background:white;
+  border-radius:8px;
+  border:1px solid #dce6eb;
+  box-shadow:0 5px 15px rgba(0,0,0,.08);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:7px;
+  color:#1471a3;
+  font-size:10px;
+  font-weight:700;
+}
+
+.fake-bottle:before{
+  content:"";
+  position:absolute;
+  width:32px;
+  height:13px;
+  background:#9bd7ee;
+  margin-top:-127px;
+  border-radius:4px 4px 0 0;
+}
+
+.heart{
+  position:absolute;
+  top:10px;
+  left:10px;
+  background:white;
+  border:0;
+  font-size:20px;
+  color:#7c9aaa;
+  cursor:pointer;
+}
+
+.card-body{
+  padding:13px;
+}
+
+.brand{
+  color:#8299a8;
+  font-size:10px;
+  margin-bottom:4px;
+}
+
+.card h3{
+  font-size:13px;
+  line-height:1.5;
+  min-height:40px;
+}
+
+.rating{
+  color:#f2b94b;
+  font-size:11px;
+  margin:5px 0;
+}
+
+.price{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin:7px 0 11px;
+}
+
+.current{
+  color:#0877b9;
+  font-weight:800;
+  font-size:16px;
+}
+
+.old{
+  color:#a5b1b9;
+  text-decoration:line-through;
+  font-size:11px;
+}
+
+.add{
+  width:100%;
+  background:#167db0;
+  color:white;
+  border:0;
+  border-radius:20px;
+  padding:9px;
+  cursor:pointer;
+  font-size:12px;
+  font-weight:700;
+}
+
+/* BRANDS */
+.brands{
+  display:grid;
+  grid-template-columns:repeat(10,1fr);
+  gap:10px;
+}
+
+.brand-box{
+  height:70px;
+  border:1px solid #e7eef2;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#fff;
+  font-family:Poppins,sans-serif;
+  font-weight:700;
+  color:#536b79;
+  font-size:14px;
+}
+
+/* SERVICES */
+.services{
+  background:#f3faff;
+}
+
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:14px;
+}
+
+.service{
+  background:white;
+  border-radius:15px;
+  min-height:115px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  gap:8px;
+  border:1px solid #e6f0f5;
+}
+
+.service-icon{
+  font-size:29px;
+}
+
+.service strong{
+  color:#126795;
+  font-size:14px;
+}
+
+.service span{
+  color:#8195a2;
+  font-size:11px;
+}
+
+/* PHARMACIST */
+.pharmacist{
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:25px;
+  align-items:center;
+  background:linear-gradient(100deg,#e8f7ff,#f7fcff);
+  border-radius:22px;
+  padding:25px;
+}
+
+.pharmacist h2{
+  color:#0b6399;
+  margin-bottom:8px;
+}
+
+.pharmacist p{
+  color:#526f80;
+  line-height:1.9;
+  margin-bottom:15px;
+}
+
+.pharmacist-img{
+  min-height:190px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:90px;
+}
+
+/* FOOTER */
+footer{
+  background:#f8fbfd;
+  border-top:1px solid #e4edf2;
+  padding:40px 0 20px;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr 1fr 1fr;
+  gap:30px;
+}
+
+.footer-logo{
+  font-size:22px;
+  color:#0877b9;
+  font-weight:800;
+}
+
+.footer-column h3{
+  color:#17648e;
+  font-size:15px;
+  margin-bottom:13px;
+}
+
+.footer-column a,
+.footer-column p{
+  display:block;
+  color:#728894;
+  font-size:12px;
+  margin:8px 0;
+}
+
+.social{
+  display:flex;
+  gap:9px;
+  margin-top:12px;
+}
+
+.social span{
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  background:#fff;
+  border:1px solid #dfeaf0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.copyright{
+  text-align:center;
+  border-top:1px solid #e5edf2;
+  margin-top:30px;
+  padding-top:18px;
+  color:#91a0a9;
+  font-size:11px;
+}
+
+/* TOAST */
+.toast{
+  position:fixed;
+  bottom:25px;
+  left:50%;
+  transform:translateX(-50%) translateY(100px);
+  background:#0877b9;
+  color:white;
+  padding:13px 24px;
+  border-radius:30px;
+  box-shadow:0 10px 30px rgba(0,0,0,.18);
+  transition:.3s;
+  z-index:999;
+  font-size:13px;
+}
+
+.toast.show{
+  transform:translateX(-50%) translateY(0);
+}
+
+/* RESPONSIVE */
+@media(max-width:1150px){
+  .categories{
+    grid-template-columns:repeat(5,1fr);
   }
 
-  .nav-container::-webkit-scrollbar {
-    display: none;
+  .products{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .brands{
+    grid-template-columns:repeat(5,1fr);
+  }
+
+  .nav-container{
+    overflow-x:auto;
+    justify-content:flex-start;
   }
 }
 
-@media (max-width: 700px) {
-  .nav-link {
-    min-height: 46px;
-    padding: 0 13px;
-    font-size: 11px;
+@media(max-width:800px){
+  .top-container{
+    flex-wrap:wrap;
+    padding:12px 0;
   }
-}  </style>
+
+  .logo{
+    min-width:auto;
+  }
+
+  .search{
+    order:3;
+    flex-basis:100%;
+    max-width:none;
+  }
+
+  .hero-inner{
+    grid-template-columns:1fr;
+  }
+
+  .hero-text{
+    text-align:center;
+  }
+
+  .hero-buttons{
+    justify-content:center;
+  }
+
+  .hero h1{
+    font-size:32px;
+  }
+
+  .hero-visual{
+    min-height:260px;
+  }
+
+  .feature-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .banner-grid,
+  .pharmacist{
+    grid-template-columns:1fr;
+  }
+
+  .services-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .footer-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:550px){
+  .container{
+    width:94%;
+  }
+
+  .actions span:not(.action-icon){
+    display:none;
+  }
+
+  .logo-ar{
+    font-size:18px;
+  }
+
+  .snowflake{
+    width:45px;
+    height:45px;
+    font-size:28px;
+  }
+
+  .hero h1{
+    font-size:27px;
+  }
+
+  .hero p{
+    font-size:14px;
+  }
+
+  .categories{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .products{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .brands{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .services-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+
+  .banner{
+    min-height:190px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <header class="top-header">
+<!-- HEADER -->
+<header class="topbar">
+  <div class="container top-container">
 
-    <div class="header-container">
+    <a class="logo" href="#">
+      <div class="snowflake">❄</div>
+      <div>
+        <div class="logo-ar">صيدلية الثلج الأبيض</div>
+        <div class="logo-en">White Snow Pharmacy</div>
+      </div>
+    </a>
 
-      <!-- Logo -->
-      <a href="#" class="logo">
+    <div class="search">
+      <span>⌕</span>
+      <input id="searchInput" type="search"
+      placeholder="إبحث عن دواء، منتج أو علامة تجارية ...">
+    </div>
 
-        <div class="snowflake">
-          ❄️
-        </div>
+    <div class="actions">
 
-        <div class="logo-text">
-          <div class="logo-ar">
-            صيدلية الثلج الأبيض
-          </div>
+      <button class="action">
+        <span class="action-icon">♙</span>
+        <span>حسابي</span>
+      </button>
 
-          <div class="logo-en">
-            White Snow Pharmacy
-          </div>
-        </div>
+      <button class="action">
+        <span class="action-icon">♡</span>
+      </button>
 
-      </a>
+      <button class="action cart">
+        <span class="action-icon">🛒</span>
+        <span class="badge" id="cartCount">0</span>
+      </button>
 
+      <button class="action">
+        <span>عربي | EN</span>
+      </button>
 
-      <!-- Search -->
-      <div class="search-box">
+    </div>
 
-        <span class="search-icon">⌕</span>
+  </div>
+</header>
 
-        <input
-          type="search"
-          placeholder="ابحث عن دواء، منتج أو علامة تجارية..."
-        >
+<!-- NAVIGATION -->
+<nav class="nav">
+  <div class="container nav-container">
 
+    <a href="#" class="active">الرئيسية</a>
+    <a href="#medicines">الأدوية</a>
+    <a href="#skin">العناية بالبشرة</a>
+    <a href="#personal">العناية الشخصية</a>
+    <a href="#mother">الأم والطفل</a>
+    <a href="#vitamins">الفيتامينات والمكملات</a>
+    <a href="#medical">مستلزمات طبية</a>
+    <a href="#brands">العلامات التجارية</a>
+    <a href="#offers" class="offer">العروض</a>
+    <a href="#contact">تواصل معنا</a>
+
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-inner">
+
+    <div class="hero-text">
+
+      <div class="hero-small">WHITE SNOW PHARMACY</div>
+
+      <h1>العناية بصحتك تبدأ من هنا</h1>
+
+      <p>
+        منتجات طبية وعناية بالبشرة مختارة بعناية
+        من صيدلية الثلج الأبيض
+      </p>
+
+      <div class="hero-buttons">
+        <button class="btn btn-primary"
+        onclick="scrollToSection('medicines')">
+          تسوق الآن 🛒
+        </button>
+
+        <button class="btn btn-outline"
+        onclick="scrollToSection('skin')">
+          تصفح منتجات العناية بالبشرة
+        </button>
       </div>
 
+    </div>
 
-      <!-- Actions -->
-      <div class="header-actions">
+    <div class="hero-visual">
 
-        <div class="language">
-          <a href="#">عربي</a>
-          <span>|</span>
-          <a href="#">EN</a>
+      <div class="products-visual">
+
+        <div class="product-shape">
+          <div class="cap"></div>
+          <div class="label">
+            <b>CeraVe</b>
+            Foaming<br>Cleanser
+          </div>
         </div>
 
-        <button class="action">
-          <span class="action-icon">♙</span>
-          <span>حسابي</span>
-        </button>
+        <div class="product-shape tall">
+          <div class="cap"></div>
+          <div class="label">
+            <b>LA ROCHE-POSAY</b>
+            Cicaplast<br>B5+
+          </div>
+        </div>
 
-        <button class="action">
-          <span class="action-icon">♡</span>
-        </button>
+        <div class="product-shape">
+          <div class="cap"></div>
+          <div class="label">
+            <b>VICHY</b>
+            MINERAL<br>89
+          </div>
+        </div>
 
-        <button class="action">
-
-          <span class="action-icon">🛒</span>
-
-          <span class="cart-badge">
-            3
-          </span>
-
-        </button>
+        <div class="product-shape tall">
+          <div class="cap"></div>
+          <div class="label">
+            <b>Eucerin</b>
+            HYALURON<br>FILLER
+          </div>
+        </div>
 
       </div>
 
     </div>
 
-  </header>
-<nav class="main-nav">
-  <div class="nav-container">
+  </div>
+</section>
 
-    <a href="#" class="nav-link active">الرئيسية</a>
-    <a href="#" class="nav-link">الأدوية</a>
-    <a href="#" class="nav-link">العناية بالبشرة</a>
-    <a href="#" class="nav-link">العناية الشخصية</a>
-    <a href="#" class="nav-link">الأم والطفل</a>
-    <a href="#" class="nav-link">الفيتامينات والمكملات</a>
-    <a href="#" class="nav-link">المستلزمات الطبية</a>
-    <a href="#" class="nav-link">الماركات</a>
-    <a href="#" class="nav-link offers">العروض</a>
-    <a href="#" class="nav-link">تواصل معنا</a>
+<!-- FEATURES -->
+<div class="features">
+  <div class="container feature-grid">
+
+    <div class="feature">
+      <span class="feature-icon">🚚</span>
+      توصيل لجميع أنحاء الأردن
+    </div>
+
+    <div class="feature">
+      <span class="feature-icon">◇</span>
+      منتجات أصلية 100%
+    </div>
+
+    <div class="feature">
+      <span class="feature-icon">♙</span>
+      استشارة صيدلانية
+    </div>
+
+    <div class="feature">
+      <span class="feature-icon">▣</span>
+      طرق دفع متعددة وآمنة
+    </div>
 
   </div>
-</nav>
+</div>
+
+<!-- CATEGORIES -->
+<section>
+  <div class="container">
+
+    <div class="section-title">
+      <h2>تسوق حسب الفئة</h2>
+      <a href="#">عرض الكل ←</a>
+    </div>
+
+    <div class="categories">
+
+      <div class="category" id="medicines">
+        <div class="category-icon">💊</div>
+        <span>الأدوية</span>
+      </div>
+
+      <div class="category" id="skin">
+        <div class="category-icon">👩🏻</div>
+        <span>العناية بالبشرة</span>
+      </div>
+
+      <div class="category" id="personal">
+        <div class="category-icon">🧴</div>
+        <span>العناية الشخصية</span>
+      </div>
+
+      <div class="category" id="mother">
+        <div class="category-icon">🍼</div>
+        <span>الأم والطفل</span>
+      </div>
+
+      <div class="category">
+        <div class="category-icon">💇🏻‍♀️</div>
+        <span>العناية بالشعر</span>
+      </div>
+
+      <div class="category">
+        <div class="category-icon">🦷</div>
+        <span>العناية بالفم</span>
+      </div>
+
+      <div class="category" id="medical">
+        <div class="category-icon">🩺</div>
+        <span>مستلزمات طبية</span>
+      </div>
+
+      <div class="category" id="vitamins">
+        <div class="category-icon">🌿</div>
+        <span>الفيتامينات والمكملات</span>
+      </div>
+
+      <div class="category">
+        <div class="category-icon">☀️</div>
+        <span>واقيات الشمس</span>
+      </div>
+
+      <div class="category">
+        <div class="category-icon">🎁</div>
+        <span>العروض</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BANNERS -->
+<section id="offers">
+  <div class="container banner-grid">
+
+    <div class="banner banner-pink">
+      <h3>عروض هذا الأسبوع</h3>
+      <p>Special Offers</p>
+      <button class="btn btn-primary"
+      onclick="showToast('تم فتح قسم العروض 🎁')">
+        تسوق العروض
+      </button>
+
+      <div class="mini-products">
+        <div class="mini"></div>
+        <div class="mini" style="height:120px"></div>
+        <div class="mini" style="height:85px"></div>
+        <div class="mini" style="height:105px"></div>
+      </div>
+    </div>
+
+    <div class="banner banner-blue">
+      <h3>اكتشفي روتين بشرتك</h3>
+      <p>Discover Your Skincare Routine</p>
+
+      <button class="btn btn-outline"
+      onclick="showToast('ابدئي باختيار نوع بشرتك ✨')">
+        ابدئي الآن
+      </button>
+
+      <div class="mini-products">
+        <div class="mini" style="height:120px"></div>
+        <div class="mini" style="height:90px"></div>
+        <div class="mini" style="height:110px"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- BEST SELLERS -->
+<section>
+  <div class="container">
+
+    <div class="section-title">
+      <h2>الأكثر مبيعاً</h2>
+      <a href="#">عرض الكل ←</a>
+    </div>
+
+    <div class="products">
+
+      <div class="card">
+        <div class="card-img">
+          <button class="heart">♡</button>
+          <div class="fake-bottle">CeraVe<br>Foaming<br>Cleanser</div>
+        </div>
+        <div class="card-body">
+          <div class="brand">CeraVe</div>
+          <h3>Foaming Facial Cleanser</h3>
+          <div class="rating">★★★★★ (120)</div>
+          <div class="price">
+            <span class="current">9.99 JD</span>
+            <span class="old">12.00 JD</span>
+          </div>
+          <button class="add" onclick="addToCart('CeraVe Foaming Cleanser')">
+            أضف للسلة 🛒
+          </button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img">
+          <button class="heart">♡</button>
+          <div class="fake-bottle">LA<br>ROCHE-POSAY<br>EFFACLAR</div>
+        </div>
+        <div class="card-body">
+          <div class="brand">La Roche-Posay</div>
+          <h3>Effaclar Duo+</h3>
+          <div class="rating">★★★★★ (95)</div>
+          <div class="price">
+            <span class="current">14.50 JD</span>
+            <span class="old">18.00 JD</span>
+          </div>
+          <button class="add" onclick="addToCart('Effaclar Duo+')">
+            أضف للسلة 🛒
+          </button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img">
+          <button class="heart">♡</button>
+          <div class="fake-bottle">BIODERMA<br>Sensibio<br>H2O</div>
+        </div>
+        <div class="card-body">
+          <div class="brand">Bioderma</div>
+          <h3>Sensibio H2O Micellar Water</h3>
+          <div class="rating">★★★★★ (88)</div>
+          <div class="price">
+            <span class="current">11.00 JD</span>
+            <span class="old">15.00 JD</span>
+          </div>
+          <button class="add" onclick="addToCart('Bioderma Sensibio H2O')">
+            أضف للسلة 🛒
+          </button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img">
+          <button class="heart">♡</button>
+          <div class="fake-bottle">Eucerin<br>Hyaluron<br>Filler</div>
+        </div>
+        <div class="card-body">
+          <div class="brand">Eucerin</div>
+          <h3>Hyaluron-Filler Cream</h3>
+          <div class="rating">★★★★★ (73)</div>
+          <div class="price">
+            <span class="current">27.00 JD</span>
+            <span class="old">32.00 JD</span>
+          </div>
+          <button class="add" onclick="addToCart('Eucerin Hyaluron-Filler')">
+            أضف للسلة 🛒
+          </button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img">
+          <button class="heart">♡</button>
+          <div class="fake-bottle">The Ordinary<br>Niacinamide<br>10%</div>
+        </div>
+        <div class="card-body">
+          <div class="brand">The Ordinary</div>
+          <h3>Niacinamide 10% + Zinc</h3>
+          <div class="rating">★★★★★ (210)</div>
+          <div class="price">
+            <span class="current">8.50 JD</span>
+          </div>
+          <button class="add" onclick="addToCart('The Ordinary Niacinamide')">
+            أضف للسلة 🛒
+          </button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img">
+          <button class="heart">♡</button>
+          <div class="fake-bottle">ISDIN<br>Fusion Water<br>SPF 50</div>
+        </div>
+        <div class="card-body">
+          <div class="brand">ISDIN</div>
+          <h3>Fusion Water SPF 50</h3>
+          <div class="rating">★★★★★ (154)</div>
+          <div class="price">
+            <span class="current">18.00 JD</span>
+            <span class="old">22.00 JD</span>
+          </div>
+          <button class="add" onclick="addToCart('ISDIN Fusion Water SPF 50')">
+            أضف للسلة 🛒
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BRANDS -->
+<section id="brands">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>أشهر العلامات التجارية</h2>
+      <a href="#">عرض الكل ←</a>
+    </div>
+
+    <div class="brands">
+      <div class="brand-box">CeraVe</div>
+      <div class="brand-box">LA ROCHE-POSAY</div>
+      <div class="brand-box">BIODERMA</div>
+      <div class="brand-box">Eucerin</div>
+      <div class="brand-box">VICHY</div>
+      <div class="brand-box">Avène</div>
+      <div class="brand-box">The Ordinary</div>
+      <div class="brand-box">SVR</div>
+      <div class="brand-box">URIAGE</div>
+      <div class="brand-box">ISDIN</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PHARMACIST -->
+<section>
+  <div class="container">
+
+    <div class="pharmacist">
+
+      <div>
+        <h2>اسألي الصيدلي 👩🏻‍⚕️</h2>
+
+        <p>
+          تحتاجين مساعدة في اختيار المنتج المناسب؟
+          فريق صيدلية الثلج الأبيض جاهز لمساعدتك
+          والإجابة عن استفساراتك.
+        </p>
+
+        <button class="btn btn-primary"
+        onclick="showToast('سيتم التواصل معك قريباً 💙')">
+          تحدثي معنا 💬
+        </button>
+      </div>
+
+      <div class="pharmacist-img">
+        👩🏻‍⚕️
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services">
+  <div class="container">
+
+    <div class="services-grid">
+
+      <div class="service">
+        <div class="service-icon">🚚</div>
+        <strong>توصيل سريع</strong>
+        <span>لجميع أنحاء الأردن</span>
+      </div>
+
+      <div class="service">
+        <div class="service-icon">♢</div>
+        <strong>منتجات أصلية</strong>
+        <span>مضمونة 100%</span>
+      </div>
+
+      <div class="service">
+        <div class="service-icon">▣</div>
+        <strong>دفع آمن</strong>
+        <span>طرق دفع متعددة</span>
+      </div>
+
+      <div class="service">
+        <div class="service-icon">♙</div>
+        <strong>استشارة صيدلانية</strong>
+        <span>نساعدك باختيارك</span>
+      </div>
+
+      <div class="service">
+        <div class="service-icon">♧</div>
+        <strong>خدمة العملاء</strong>
+        <span>دعم دائم</span>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div class="footer-column">
+        <div class="footer-logo">❄ صيدلية الثلج الأبيض</div>
+        <p>White Snow Pharmacy</p>
+        <p>صحتك أهم ما نملك 🤍</p>
+
+        <div class="social">
+          <span>◎</span>
+          <span>f</span>
+          <span>♪</span>
+          <span>☏</span>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h3>روابط سريعة</h3>
+        <a href="#medicines">الأدوية</a>
+        <a href="#skin">العناية بالبشرة</a>
+        <a href="#offers">العروض</a>
+        <a href="#brands">العلامات التجارية</a>
+      </div>
+
+      <div class="footer-column">
+        <h3>خدمة العملاء</h3>
+        <a href="#">تواصل معنا</a>
+        <a href="#">استرجاع واستبدال</a>
+        <a href="#">تتبع الطلب</a>
+        <a href="#">الدفع والتوصيل</a>
+      </div>
+
+      <div class="footer-column">
+        <h3>معلومات</h3>
+        <a href="#">من نحن</a>
+        <a href="#">الأسئلة الشائعة</a>
+        <a href="#">سياسة الخصوصية</a>
+        <a href="#">الشروط والأحكام</a>
+      </div>
+
+      <div class="footer-column">
+        <h3>تواصل معنا</h3>
+        <p>📍 الأردن</p>
+        <p>📞 07X XXX XXXX</p>
+        <p>✉️ info@whitesnowpharmacy.com</p>
+        <p>🕐 يومياً 9:00 ص - 10:00 م</p>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © 2026 White Snow Pharmacy — جميع الحقوق محفوظة
+    </div>
+
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+
+let cartCount = 0;
+
+function addToCart(product){
+
+  cartCount++;
+
+  document.getElementById("cartCount").textContent = cartCount;
+
+  showToast("تمت إضافة " + product + " إلى السلة 🛒");
+
+}
+
+function showToast(message){
+
+  const toast = document.getElementById("toast");
+
+  toast.textContent = message;
+
+  toast.classList.add("show");
+
+  setTimeout(()=>{
+    toast.classList.remove("show");
+  },2500);
+
+}
+
+function scrollToSection(id){
+
+  const section = document.getElementById(id);
+
+  if(section){
+    section.scrollIntoView({
+      behavior:"smooth"
+    });
+  }
+
+}
+
+document.getElementById("searchInput").addEventListener("input",function(){
+
+  const value = this.value.toLowerCase().trim();
+
+  const cards = document.querySelectorAll(".card");
+
+  cards.forEach(card=>{
+
+    const text = card.textContent.toLowerCase();
+
+    if(text.includes(value) || value === ""){
+      card.style.display="";
+    }else{
+      card.style.display="none";
+    }
+
+  });
+
+});
+
+document.querySelectorAll(".heart").forEach(button=>{
+
+  button.addEventListener("click",function(){
+
+    this.textContent =
+      this.textContent === "♡" ? "♥" : "♡";
+
+    this.style.color =
+      this.textContent === "♥" ? "#f47f98" : "#7c9aaa";
+
+  });
+
+});
+
+</script>
+
 </body>
 </html>
