@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>صيدلية الثلج الأبيض | White Snow Pharmacy</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Cairo", sans-serif;
+      background: #ffffff;
+      color: #12324a;
+    }
+
+    .top-header {
+      width: 100%;
+      background: #ffffff;
+      border-bottom: 1px solid #e7f0f5;
+      padding: 14px 30px;
+    }
+
+    .header-container {
+      max-width: 1450px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    /* Logo */
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 250px;
+      text-decoration: none;
+      color: #0877b9;
+    }
+
+    .snowflake {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #eaf7fc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+    }
+
+    .logo-text {
+      line-height: 1.2;
+    }
+
+    .logo-ar {
+      font-size: 21px;
+      font-weight: 800;
+    }
+
+    .logo-en {
+      font-family: "Poppins", sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: #5d9bc0;
+      direction: ltr;
+      text-align: right;
+    }
+
+    /* Search */
+
+    .search-box {
+      flex: 1;
+      height: 48px;
+      border: 1.5px solid #d9e8ef;
+      border-radius: 28px;
+      display: flex;
+      align-items: center;
+      padding: 0 18px;
+      background: #ffffff;
+      transition: 0.25s ease;
+    }
+
+    .search-box:focus-within {
+      border-color: #0877b9;
+      box-shadow: 0 0 0 4px rgba(8, 119, 185, 0.08);
+    }
+
+    .search-icon {
+      font-size: 21px;
+      color: #52768c;
+      margin-left: 10px;
+    }
+
+    .search-box input {
+      width: 100%;
+      border: none;
+      outline: none;
+      font-family: "Cairo", sans-serif;
+      font-size: 14px;
+      color: #12324a;
+      background: transparent;
+    }
+
+    .search-box input::placeholder {
+      color: #8ba0ad;
+    }
+
+    /* Header Actions */
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      white-space: nowrap;
+    }
+
+    .language {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .language a {
+      color: #0877b9;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .language span {
+      color: #ccd9df;
+    }
+
+    .action {
+      position: relative;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      color: #0877b9;
+      font-family: "Cairo", sans-serif;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .action-icon {
+      font-size: 23px;
+    }
+
+    .cart-badge {
+      position: absolute;
+      top: -9px;
+      left: -7px;
+      min-width: 18px;
+      height: 18px;
+      padding: 0 4px;
+      border-radius: 50%;
+      background: #0877b9;
+      color: white;
+      font-family: "Poppins", sans-serif;
+      font-size: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Tablet */
+
+    @media (max-width: 1050px) {
+      .top-header {
+        padding: 12px 18px;
+      }
+
+      .header-container {
+        gap: 15px;
+      }
+
+      .logo {
+        min-width: auto;
+      }
+
+      .logo-ar {
+        font-size: 17px;
+      }
+
+      .logo-en {
+        font-size: 11px;
+      }
+
+      .header-actions {
+        gap: 10px;
+      }
+
+      .action span:not(.action-icon):not(.cart-badge) {
+        display: none;
+      }
+    }
+
+    /* Mobile */
+
+    @media (max-width: 700px) {
+      .top-header {
+        padding: 10px 14px;
+      }
+
+      .header-container {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        gap: 10px;
+      }
+
+      .logo {
+        order: 2;
+      }
+
+      .logo-text {
+        display: none;
+      }
+
+      .snowflake {
+        width: 42px;
+        height: 42px;
+        font-size: 25px;
+      }
+
+      .search-box {
+        order: 1;
+        height: 42px;
+      }
+
+      .header-actions {
+        order: 3;
+      }
+
+      .language,
+      .action:first-of-type {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="top-header">
+
+    <div class="header-container">
+
+      <!-- Logo -->
+      <a href="#" class="logo">
+
+        <div class="snowflake">
+          ❄️
+        </div>
+
+        <div class="logo-text">
+          <div class="logo-ar">
+            صيدلية الثلج الأبيض
+          </div>
+
+          <div class="logo-en">
+            White Snow Pharmacy
+          </div>
+        </div>
+
+      </a>
+
+
+      <!-- Search -->
+      <div class="search-box">
+
+        <span class="search-icon">⌕</span>
+
+        <input
+          type="search"
+          placeholder="ابحث عن دواء، منتج أو علامة تجارية..."
+        >
+
+      </div>
+
+
+      <!-- Actions -->
+      <div class="header-actions">
+
+        <div class="language">
+          <a href="#">عربي</a>
+          <span>|</span>
+          <a href="#">EN</a>
+        </div>
+
+        <button class="action">
+          <span class="action-icon">♙</span>
+          <span>حسابي</span>
+        </button>
+
+        <button class="action">
+          <span class="action-icon">♡</span>
+        </button>
+
+        <button class="action">
+
+          <span class="action-icon">🛒</span>
+
+          <span class="cart-badge">
+            3
+          </span>
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </header>
+
+</body>
+</html>
