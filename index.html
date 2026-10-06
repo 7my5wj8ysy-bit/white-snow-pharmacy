@@ -9,8 +9,126 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
 <style>
+  /* ===============================
+   ❤️ FAVORITES
+================================ */
+
+.favorites-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.favorites-overlay.show {
+    display: flex;
+}
+
+.favorites-box {
+    width: min(650px, 95%);
+    max-height: 85vh;
+    overflow-y: auto;
+    background: #fff;
+    border-radius: 25px;
+    padding: 25px;
+    position: relative;
+    box-shadow: 0 15px 50px rgba(0,0,0,.18);
+}
+
+.favorites-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #173b55;
+}
+
+.close-favorites {
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    border: none;
+    background: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #7c9aaa;
+}
+
+.favorite-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 16px;
+    margin-bottom: 12px;
+    border: 1px solid #e4eef4;
+    border-radius: 18px;
+    background: #fff;
+}
+
+.favorite-brand {
+    font-size: 13px;
+    color: #7191a5;
+}
+
+.favorite-item h3 {
+    margin: 5px 0;
+    color: #173b55;
+}
+
+.favorite-price {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.favorite-price .current {
+    font-weight: bold;
+    color: #f47f98;
+}
+
+.favorite-price .old {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.favorite-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.favorite-cart {
+    border: none;
+    background: #f47f98;
+    color: white;
+    padding: 9px 14px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.favorite-remove {
+    border: none;
+    background: #f4f4f4;
+    color: #777;
+    padding: 8px 14px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.empty-favorites {
+    text-align: center;
+    padding: 50px 20px;
+    color: #7c9aaa;
+}
+
+.empty-favorites:first-letter {
+    font-size: 40px;
+}
+
 *{
   box-sizing:border-box;
   margin:0;
@@ -1397,7 +1515,8 @@ footer{
 <div class="social">
     <a href="https://www.instagram.com/snow_white_pharmacy/" target="_blank">Instagram</a>
     <a href="https://www.facebook.com/share/18ZfBtpr6a/?mibextid=wwXIfr" target="_blank">Facebook</a>
-    <a href="https://wa.me/962788663048" target="_blank">WhatsApp</a>
+    <a href="https://wa.me/962788663048" target="_blank">WhatsApp 0788663048</a>
+    <a href="https://wa.me/962795441677" target="_blank">WhatsApp 0795441677</a>
         
         </div>
       </div>
@@ -1429,21 +1548,8 @@ footer{
 </p>
       
 
-      <div class="footer-column">
-        <h3>معلومات</h3>
-        <a href="#">من نحن</a>
-        <a href="#">الأسئلة الشائعة</a>
-        <a href="#">سياسة الخصوصية</a>
-        <a href="#">الشروط والأحكام</a>
-      </div>
-
-      <div class="footer-column">
-        <h3>تواصل معنا</h3>
-        <p>📍 الأردن</p>
-        <p>📞 07X XXX XXXX</p>
-        <p>✉️ info@whitesnowpharmacy.com</p>
-        <p>🕐 يومياً 9:00 ص - 10:00 م</p>
-      </div>
+      
+        
 
     </div>
 
@@ -1512,21 +1618,11 @@ document.getElementById("searchInput").addEventListener("input",function(){
       card.style.display="none";
     }
 
-  });
+
 
 });
 
-document.querySelectorAll(".heart").forEach(button=>{
-
-  button.addEventListener("click",function(){
-
-    this.textContent =
-      this.textContent === "♡" ? "♥" : "♡";
-
-    this.style.color =
-      this.textContent === "♥" ? "#f47f98" : "#7c9aaa";
-
-  });
+  
 
 });
 
