@@ -252,7 +252,92 @@
         display: none;
       }
     }
-  </style>
+.main-nav {
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #e7f0f5;
+  box-shadow: 0 3px 12px rgba(20, 80, 110, 0.04);
+}
+
+.nav-container {
+  max-width: 1450px;
+  margin: 0 auto;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 0 20px;
+}
+
+.nav-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 17px;
+  color: #31586e;
+  text-decoration: none;
+  font-family: "Cairo", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: 0.25s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  width: 0;
+  height: 3px;
+  border-radius: 5px 5px 0 0;
+  background: #0877b9;
+  transform: translateX(50%);
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover {
+  color: #0877b9;
+  background: #f5fbfe;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 65%;
+}
+
+.nav-link.active {
+  color: #0877b9;
+  font-weight: 700;
+}
+
+.nav-link.offers {
+  color: #e38a9c;
+  font-weight: 700;
+}
+
+@media (max-width: 1100px) {
+  .nav-container {
+    overflow-x: auto;
+    justify-content: flex-start;
+    scrollbar-width: none;
+  }
+
+  .nav-container::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .nav-link {
+    min-height: 46px;
+    padding: 0 13px;
+    font-size: 11px;
+  }
+}  </style>
 </head>
 
 <body>
@@ -327,6 +412,21 @@
     </div>
 
   </header>
+<nav class="main-nav">
+  <div class="nav-container">
 
+    <a href="#" class="nav-link active">الرئيسية</a>
+    <a href="#" class="nav-link">الأدوية</a>
+    <a href="#" class="nav-link">العناية بالبشرة</a>
+    <a href="#" class="nav-link">العناية الشخصية</a>
+    <a href="#" class="nav-link">الأم والطفل</a>
+    <a href="#" class="nav-link">الفيتامينات والمكملات</a>
+    <a href="#" class="nav-link">المستلزمات الطبية</a>
+    <a href="#" class="nav-link">الماركات</a>
+    <a href="#" class="nav-link offers">العروض</a>
+    <a href="#" class="nav-link">تواصل معنا</a>
+
+  </div>
+</nav>
 </body>
 </html>
